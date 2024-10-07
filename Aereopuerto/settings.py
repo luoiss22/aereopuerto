@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    
+    'aereopuerto_app',  # Se añade la app aereopuerto_app
 ]
 
 MIDDLEWARE = [
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Aereopuerto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # El motor de base de datos para PostgreSQL
+        'NAME': 'Aereopuerto',  # Nombre de la base de datos
+        'USER': 'postgres',  # Usuario de la base de datos
+        'PASSWORD': 'root',  # Contraseña del usuario
+        'HOST': 'localhost',  # Dirección del servidor de la base de datos (puede ser 'localhost' o una IP)
+        'PORT': '5433',  # Puerto de la base de datos (el puerto predeterminado de PostgreSQL es 5432)
     }
 }
 
